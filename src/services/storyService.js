@@ -14,7 +14,7 @@ const authHeaders = () => {
 
 /** Fetch all stories */
 export const getStories = async () => {
-  const response = await axios.get(`${API_URL}/stories`, {
+  const response = await axios.get(`${API_URL}/api/stories`, {
     headers: authHeaders(),
   });
   return response.data;
@@ -22,7 +22,7 @@ export const getStories = async () => {
 
 /** Fetch a single story by id */
 export const getStoryById = async (id) => {
-  const response = await axios.get(`${API_URL}/stories/${id}`, {
+  const response = await axios.get(`${API_URL}/api/stories/${id}`, {
     headers: authHeaders(),
   });
   return response.data;
@@ -30,7 +30,7 @@ export const getStoryById = async (id) => {
 
 /** Create a new story */
 export const createStory = async (storyData) => {
-  const response = await axios.post(`${API_URL}/stories`, storyData, {
+  const response = await axios.post(`${API_URL}/api/stories`, storyData, {
     headers: authHeaders(),
   });
   return response.data;
@@ -38,7 +38,7 @@ export const createStory = async (storyData) => {
 
 /** Update an existing story */
 export const updateStory = async ({ id, ...storyData }) => {
-  const response = await axios.put(`${API_URL}/stories/${id}`, storyData, {
+  const response = await axios.put(`${API_URL}/api/stories/${id}`, storyData, {
     headers: authHeaders(),
   });
   return response.data;
@@ -46,7 +46,7 @@ export const updateStory = async ({ id, ...storyData }) => {
 
 /** Delete a story */
 export const deleteStory = async (id) => {
-  const response = await axios.delete(`${API_URL}/stories/${id}`, {
+  const response = await axios.delete(`${API_URL}/api/stories/${id}`, {
     headers: authHeaders(),
   });
   return response.data;
