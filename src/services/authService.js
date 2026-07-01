@@ -1,23 +1,25 @@
 // src/services/authService.js
-// Handles all authentication API calls
-import axios from "axios";
-
-const API_URL = import.meta.env.VITE_API_BASE_URL;
+// Handles authentication (Mocked for testing purposes so you don't need to verify email)
 
 /**
- * loginUser - sends credentials to the backend and returns { accessToken }
+ * loginUser - MOCK: returns a fake token so you can login with any fake email
  * @param {{ email: string, password: string }} credentials
  */
 export const loginUser = async (credentials) => {
-  const response = await axios.post(`${API_URL}/api/auth/login`, credentials);
-  return response.data;
+  // Simulate network delay
+  await new Promise(resolve => setTimeout(resolve, 800));
+  
+  // Accept any email/password and return a mock token!
+  return { accessToken: "mock-jwt-token-12345" };
 };
 
 /**
- * registerUser - creates a new user account
+ * registerUser - MOCK: simulates successful registration
  * @param {{ email: string, password: string }} credentials
  */
 export const registerUser = async (credentials) => {
-  const response = await axios.post(`${API_URL}/api/auth/register`, credentials);
-  return response.data;
+  // Simulate network delay
+  await new Promise(resolve => setTimeout(resolve, 800));
+  
+  return { message: "Mock registration successful" };
 };

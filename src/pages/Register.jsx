@@ -19,9 +19,8 @@ export default function Register() {
   const registerMutation = useMutation({
     mutationFn: registerUser,
     onSuccess: () => {
-      // API sends: "User registered. Please check your email for the verification code."
-      setIsSuccess(true);
-      toast.success("Registration successful!");
+      toast.success("Account created! You can now log in.");
+      navigate("/login");
     },
     onError: (err) => {
       toast.error(err.response?.data?.message || err.response?.data?.error || "Registration failed");
@@ -47,26 +46,6 @@ export default function Register() {
     setErrors({});
     registerMutation.mutate({ email, password });
   };
-
-  if (isSuccess) {
-    return (
-      <div className={styles.page}>
-        <div className={styles.card} style={{ textAlign: "center" }}>
-          <div className={styles.logo} style={{ background: "var(--success)" }}>
-            <Mail size={32} />
-          </div>
-          <h2 className={styles.title} style={{ color: "var(--success)" }}>Verify Your Email</h2>
-          <p className={styles.subtitle} style={{ marginBottom: "1.5rem" }}>
-            We've sent a verification link to <strong>{email}</strong>.
-            Please check your inbox and click the link before logging in.
-          </p>
-          <button onClick={() => navigate("/login")} className={`btn btn-primary ${styles.submitBtn}`}>
-            Go to Login
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className={styles.page}>
