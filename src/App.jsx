@@ -8,6 +8,7 @@ import AddStory from "./pages/AddStory";
 import EditStory from "./pages/EditStory";
 import DeleteStory from "./pages/DeleteStory";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
 
           {/* Authentication */}
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </main>
     </>

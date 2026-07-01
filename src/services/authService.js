@@ -9,6 +9,15 @@ const API_URL = import.meta.env.VITE_API_BASE_URL;
  * @param {{ email: string, password: string }} credentials
  */
 export const loginUser = async (credentials) => {
-  const response = await axios.post(`${API_URL}/login`, credentials);
+  const response = await axios.post(`${API_URL}/api/auth/login`, credentials);
+  return response.data;
+};
+
+/**
+ * registerUser - creates a new user account
+ * @param {{ email: string, password: string }} credentials
+ */
+export const registerUser = async (credentials) => {
+  const response = await axios.post(`${API_URL}/api/auth/register`, credentials);
   return response.data;
 };

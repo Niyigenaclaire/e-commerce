@@ -170,8 +170,8 @@ export default function Login() {
         <div className={styles.footer}>
           <p>
             Don't have an account?{" "}
-            <Link to="/" className={styles.footerLink}>
-              Browse as guest
+            <Link to="/register" className={styles.footerLink}>
+              Sign up here
             </Link>
           </p>
         </div>
