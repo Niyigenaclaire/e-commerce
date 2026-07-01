@@ -1,0 +1,124 @@
+/* src/pages/StoryForm.module.css — Shared styles for AddStory and EditStory */
+
+/* ── Back link ────────────────────────────────────────────────────────────── */
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-bottom: 1.75rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.back:hover { color: var(--primary); }
+
+/* ── Card wrapper ─────────────────────────────────────────────────────────── */
+.card {
+  background: white;
+  border-radius: var(--radius-xl);
+  border: 1.5px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.cardHeader {
+  padding: 2rem 2rem 1.5rem;
+  border-bottom: 1.5px solid var(--border);
+  background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.3px;
+  margin-bottom: 0.3rem;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  padding-left: 2.1rem;
+}
+
+/* ── Form ─────────────────────────────────────────────────────────────────── */
+.form {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.required { color: var(--error); margin-left: 2px; }
+.optional { color: var(--text-muted); font-size: 0.8rem; font-weight: 400; }
+
+.textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+.charCount {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: right;
+  margin-top: 0.25rem;
+}
+
+.inputError {
+  border-color: var(--error) !important;
+}
+
+.inputError:focus {
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.15) !important;
+}
+
+.formActions {
+  display: flex;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* ── Auth gate ────────────────────────────────────────────────────────────── */
+.authGate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 5rem 2rem;
+  background: white;
+  border-radius: var(--radius-xl);
+  border: 1.5px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.authGate h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.authGate p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.gateActions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .cardHeader, .form { padding: 1.25rem; }
+  .title { font-size: 1.25rem; }
+}

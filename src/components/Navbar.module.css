@@ -1,0 +1,132 @@
+/* src/components/Navbar.module.css */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 20px rgba(124,58,237,0.08);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  height: 68px;
+  gap: 1.5rem;
+}
+
+/* ── Brand ───────────────────────────────────────────────────────────────── */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+/* ── Nav links ───────────────────────────────────────────────────────────── */
+.links {
+  display: flex;
+  list-style: none;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.link:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.active {
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ── Auth area ───────────────────────────────────────────────────────────── */
+.authArea {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.userBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #d1fae5;
+  color: #065f46;
+  padding: 0.35rem 0.85rem;
+  border-radius: 99px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.guestLabel {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  padding: 0.35rem 0.5rem;
+}
+
+.authBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+}
+
+.loginBtn {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  box-shadow: 0 3px 12px rgba(124,58,237,0.35);
+}
+
+.loginBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(124,58,237,0.45);
+}
+
+.logoutBtn {
+  background: #fff1f1;
+  color: var(--error);
+}
+
+.logoutBtn:hover {
+  background: var(--error);
+  color: white;
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .guestLabel { display: none; }
+  .userBadge span { display: none; }
+  .links .link span { display: none; }
+}

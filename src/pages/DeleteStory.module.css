@@ -1,0 +1,85 @@
+/* src/pages/DeleteStory.module.css */
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-bottom: 1.75rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.back:hover { color: var(--primary); }
+
+.card {
+  max-width: 480px;
+  margin: 0 auto;
+  background: white;
+  border-radius: var(--radius-xl);
+  border: 1.5px solid #fecaca;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  box-shadow: 0 4px 24px rgba(239,68,68,0.1);
+}
+
+.iconWrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #fff1f1;
+  color: var(--error);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.warning {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.irreversible {
+  color: var(--error);
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Auth gate ────────────────────────────────────────────────────────────── */
+.authGate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 5rem 2rem;
+  background: white;
+  border-radius: var(--radius-xl);
+  border: 1.5px solid var(--border);
+}
+
+.authGate h2 { font-size: 1.5rem; font-weight: 800; }
+.authGate p { color: var(--text-secondary); }
+
+.gateActions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
