@@ -7,6 +7,7 @@ import { CartProvider } from './context/CartContext';
 import { OrdersProvider } from './context/OrdersContext';
 
 import Navbar from './components/Navbar';
+import MobileNav from './components/MobileNav';
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
@@ -43,6 +44,9 @@ export default function App() {
                 <Route path="/orders" element={<OrdersPage />} />
               </Routes>
             </main>
+
+            {/* Mobile bottom nav — visible only on small screens */}
+            <MobileNav />
 
             {/* Global toast notifications */}
             <Toaster
